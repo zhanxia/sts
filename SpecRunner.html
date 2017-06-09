@@ -72,8 +72,12 @@
 <script type="text/javascript">
   $("#sub").click(function(){
     var txt = $("#in").val();
-    console.log(Chinese.prototype.toTraditional("士大夫"))
-    $("#out").html(Chinese.prototype.toTraditional(txt));
+    var str = "";
+    for (var i = 0; i < txt.length; i++) {
+      str += Chinese.prototype.toTraditional(txt[i]) ? Chinese.prototype.toTraditional(txt[i]) 
+                                                      : txt[i]
+    }
+    $("#out").text(str);
   })
 </script>
 </html>
